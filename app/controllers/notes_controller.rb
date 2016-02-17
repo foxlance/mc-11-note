@@ -24,7 +24,7 @@ class NotesController < ApplicationController
     end
 
     def edit
-
+        authorize @note
     end
 
     def update
