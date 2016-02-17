@@ -14,7 +14,7 @@ class NotesController < ApplicationController
     end
 
     def create
-        @note = current_user.notes.build(notes_params)
+        @note = current_user.notes.build(note_params)
 
         if @note.save
             redirect_to @note
@@ -28,7 +28,11 @@ class NotesController < ApplicationController
     end
 
     def update
-
+        if @note.update(note_params)
+            redirect_to @note, alert: 'Changes were saved successfully'
+        else
+            render 'edit'
+        end
     end
 
     def delete
@@ -37,7 +41,7 @@ class NotesController < ApplicationController
 
     private
 
-    def notes_params
+    def note_params
         params.require(:note).permit(:title, :content)
     end
 
