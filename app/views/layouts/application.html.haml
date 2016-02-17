@@ -3,9 +3,20 @@
     %head
         %title NoteNote
         = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+        %link{:rel => :stylesheet, :type => :'text/css', :href => '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'}
         = javascript_include_tag 'application', 'data-turbolinks-track' => true
         = csrf_meta_tags
     %body
+        %header
+            .header_inner
+                = link_to image_tag('logo.svg'), root_path, id: 'logo'
+                %nav
+                    - if user_signed_in?
+                        = link_to 'New Note', new_note_path
+                        = link_to 'Sign Out', destroy_user_session_path, method: :delete
+                    - else
+                        = link_to "Login", new_user_session_path
+
         %p.notice=notice
         %p.alert=alert
         = yield
