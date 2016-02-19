@@ -40,6 +40,14 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.alert = true
+    Bullet.bullet_logger = true
+    Bullet.console = true
+    Bullet.growl = true
+    Bullet.rails_logger = true
+  end
 
   # BetterErrors::Middleware.allow_ip! "0.0.0.0/0"
 end
