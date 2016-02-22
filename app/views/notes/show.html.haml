@@ -3,6 +3,8 @@
         %h1.title= @note.title
         %p= simple_format(@note.content)
 
+        =render 'assets'
+
         - if policy(@note).edit?
             .buttons
                 = link_to "Edit", edit_note_path(@note), class: 'button'

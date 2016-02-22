@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
     devise_for :users
-    resources :notes
+    resources :notes do
+        resources :assets, only: [:create]
+    end
 
     authenticated :user do
         root :to =>'notes#index', as: 'authenticated_root'
