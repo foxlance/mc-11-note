@@ -1,4 +1,5 @@
 .wrapper_with_padding
+
     #notes.clearfix
         - if @notes.empty?
             %p You do not have any notes yet.
@@ -9,3 +10,6 @@
                     .note
                         %p.title= note.title
                         %p.date= time_ago_in_words(note.created_at)
+
+    %div= paginate @notes
+    -# %div= paginate @notes, theme: 'twitter-bootstrap-3'

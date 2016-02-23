@@ -31,6 +31,8 @@ gem 'devise', '~> 3.5', '>= 3.5.3'
 gem "pundit"
 gem "carrierwave"
 gem "mini_magick"
+gem "kaminari"
+gem "bootstrap-kaminari-views"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

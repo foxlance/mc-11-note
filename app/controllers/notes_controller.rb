@@ -4,6 +4,9 @@ class NotesController < ApplicationController
 
     def index
         @notes = Note.where(user_id: current_user)
+                    .page(params[:page] || 1)
+                    .per(params[:per_page] || 6)
+                    .all
     end
 
     def show
