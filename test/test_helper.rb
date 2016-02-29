@@ -13,6 +13,7 @@ end
 DatabaseCleaner.strategy = :transaction
 
 class MiniTest::Test
+  include FactoryGirl::Syntax::Methods
   def setup
     DatabaseCleaner.start
   end

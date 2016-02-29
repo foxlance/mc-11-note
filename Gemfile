@@ -37,6 +37,7 @@ gem 'paranoia'
 gem "hirb"
 gem 'activeadmin', '~> 1.0.0.pre2'
 
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -64,6 +65,7 @@ end
 
 group :test do
   gem 'database_cleaner'
+  gem 'factory_girl_rails'
 end
 
 
