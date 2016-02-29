@@ -21,7 +21,9 @@ class NoteTest < MiniTest::Test
   end
 
   def test_spawns_one_note
-    create :note_with_assets
+    note = create :note_with_assets
+    puts note.assets.map(&:file)
+
     assert_equal 5, Asset.count
   end
 end

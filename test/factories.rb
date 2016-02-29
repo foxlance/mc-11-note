@@ -1,4 +1,7 @@
 FactoryGirl.define do
+
+  sequence(:asset_title) { |n| "Asset Title ##{n}" }
+
   factory :note do
     title 'Some note title'
     content 'here goes some content for the note'
@@ -13,5 +16,7 @@ FactoryGirl.define do
     end
   end
 
-  factory :asset
+  factory :asset do
+    file { generate(:asset_title) }
+  end
 end
